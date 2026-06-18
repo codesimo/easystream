@@ -1,0 +1,300 @@
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e94560;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #e94560, #0f3460);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.search-box {
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 15px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #e94560;
+}
+
+.search-box button {
+    padding: 0 25px;
+    background: #e94560;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.search-box button:hover {
+    background: #ff2e63;
+    transform: translateY(-2px);
+}
+
+.results-container {
+    margin-bottom: 3rem;
+    max-height: 400px;
+    overflow-y: auto;
+    text-align: left;
+    padding-right: 10px;
+}
+
+.result-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.result-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+    border-color: #e94560;
+}
+
+.details-container {
+    margin-top: 3rem;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+#detailTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.tv-selection {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.selection-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.selection-group:last-child {
+    margin-bottom: 0;
+}
+
+.selection-group label {
+    font-weight: 600;
+    color: #e94560;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-right: auto;
+}
+
+/* ===== CUSTOM SELECT DROPDOWN STYLES ===== */
+select {
+    position: relative;
+    padding: 12px 45px 12px 16px;
+    border-radius: 12px;
+    border: 2px solid rgba(233, 69, 96, 0.3);
+    background: linear-gradient(135deg, rgba(40, 40, 70, 0.95), rgba(30, 50, 90, 0.95));
+    color: #f0f4f8;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3E%3Cpath fill='%23e94560' d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 12px auto;
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    max-width: 400px;
+}
+
+select::placeholder {
+    color: #8a9bbd;
+}
+
+select:hover {
+    border-color: rgba(233, 69, 96, 0.5);
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+select:focus {
+    border-color: #e94560;
+    box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.2), 0 6px 20px rgba(233, 69, 96, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+/* ===== DRODOWN LIST PANEL STYLES ===== */
+select option {
+    background-color: #1e3a5f !important;
+    color: #ffffff !important;
+    padding: 12px 14px !important;
+    font-size: 0.95rem !important;
+}
+
+select option:hover {
+    background-color: #2e4b7a !important;
+}
+
+select option:checked {
+    background: linear-gradient(135deg, #2a5a8a 0%, #3a6aa8 100%) !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+}
+
+/* ===== SCROLLBAR STYLES FOR DROPDOWN PANEL ===== */
+select:focus::-webkit-scrollbar {
+    width: 8px;
+}
+
+select:focus::-webkit-scrollbar-track {
+    background: rgba(30, 50, 90, 0.5);
+}
+
+select:focus::-webkit-scrollbar-thumb {
+    background: rgba(233, 69, 96, 0.4);
+    border-radius: 4px;
+}
+
+/* ===== SCROLLBAR STYLES FOR RESULTS CONTAINER ===== */
+.results-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.results-container::-webkit-scrollbar-track {
+    background: rgba(30, 50, 90, 0.5);
+    border-radius: 4px;
+}
+
+.results-container::-webkit-scrollbar-thumb {
+    background: rgba(233, 69, 96, 0.4);
+    border-radius: 4px;
+}
+
+/* ===== SCROLLBAR STYLES FOR RESULTS ITEMS ===== */
+.result-item::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Firefox scrollbar */
+.results-container::-moz-scrollbar {
+    width: 8px;
+}
+
+.results-container::-moz-scrollbar-track {
+    background: rgba(30, 50, 90, 0.5);
+    border-radius: 4px;
+}
+
+.results-container::-moz-scrollbar-thumb {
+    background: rgba(233, 69, 96, 0.4);
+    border-radius: 4px;
+}
+
+iframe {
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.final-result-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.final-result-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: #e94560;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.final-result-link:hover {
+    background: #ff2e63;
+    transform: translateY(-2px);
+}
+
+/* ===== CUSTOM SELECT DISPLAY TEXT STYLES ===== */
+select {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+select span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== DISPLAY SPAN STYLES (for cross-browser selected value) ===== */
+#seasonDisplay, #episodeDisplay {
+    min-width: 0;
+    flex-shrink: 1;
+    padding-left: 12px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+#seasonDisplay::before {
+    content: attr(data-value) " \2022"; /* \2022 is the bullet character • */

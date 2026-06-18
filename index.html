@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie/TV Search</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Movie & TV Search</h1>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search for a movie or TV series...">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div id="results" class="results-container"></div>
+
+        <div id="details" class="details-container" style="display: none;">
+            <h2 id="detailTitle"></h2>
+            <div id="movieInfo"></div>
+
+            <div id="tvSelection" style="display: none;">
+                <div class="selection-group">
+                    <label for="seasonSelect">Season:</label>
+                    <select id="seasonSelect"></select>
+                    <span id="seasonDisplay"></span>
+                </div>
+                <div class="selection-group">
+                    <label for="episodeSelect">Episode:</label>
+                    <select id="episodeSelect"></select>
+                    <span id="episodeDisplay"></span>
+                </div>
+            </div>
+
+            <div id="finalResult"></div>
+        </div>
+    </div>
+    <script src="loader.js"></script>
+</body>
+
+</html>
