@@ -400,7 +400,7 @@
 /* ============================================================
    CONFIGURAZIONE
    ============================================================ */
-let TMDB_API_KEY = null; // popolata solo dopo lo sblocco con password (mai in chiaro nel sorgente)
+let TMDB_API_KEY = null; // in realtà è il Read Access Token (v4 auth), usato come Bearer token; popolato solo dopo lo sblocco con password (mai in chiaro nel sorgente)
 const ENCRYPTED_KEY_FILE = "encrypted-key.json"; // generato dalla GitHub Action, contiene ciphertext/salt/iv (dati pubblici, inutili senza password)
 const TMDB_BASE = "https://api.themoviedb.org/3";
 const IMG_BASE = "https://image.tmdb.org/t/p/w200";
@@ -604,11 +604,15 @@ async function performSearch(query) {
    ============================================================ */
 async function fetchTMDB(path, params = {}) {
   const url = new URL(TMDB_BASE + path);
-  url.searchParams.set("api_key", TMDB_API_KEY);
   url.searchParams.set("language", LANGUAGE);
   Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
 
-  const res = await fetch(url.toString());
+  const res = await fetch(url.toString(), {
+    headers: {
+      "Authorization": `Bearer ${TMDB_API_KEY}`,
+      "Content-Type": "application/json;charset=utf-8"
+    }
+  });
   if (!res.ok) {
     throw new Error(`TMDB request failed: ${res.status} ${res.statusText}`);
   }

@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
- * Cifra la TMDB API Key con una password, usando lo stesso schema
- * (PBKDF2-SHA256 -> AES-256-GCM) che il browser userà per decifrarla
+ * Cifra il Read Access Token TMDB (v4 auth) con una password, usando lo stesso
+ * schema (PBKDF2-SHA256 -> AES-256-GCM) che il browser userà per decifrarlo
  * tramite Web Crypto API in index.html.
  *
  * Legge da variabili d'ambiente (mai da argomenti in chiaro, per non
  * finire nella cronologia della shell o nei log):
- *   TMDB_API_KEY      - la chiave TMDB da proteggere
+ *   TMDB_API_KEY      - il Read Access Token TMDB (v4, il token JWT lungo
+ *                        da themoviedb.org/settings/api) da proteggere
  *   ENCRYPT_PASSWORD  - la password di sblocco
  *
  * Scrive encrypted-key.json nella root del progetto con:
